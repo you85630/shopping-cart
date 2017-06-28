@@ -1,15 +1,15 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-const Hello = resolve => require(['components/pages/Hello'], resolve)
-
 Vue.use(Router)
+
+const Page1 = resolve => require(['components/pages/page1'], resolve)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      name: 'Page1',
+      component: Page1
     }
   ]
 })
