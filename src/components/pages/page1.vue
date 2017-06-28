@@ -1,15 +1,19 @@
 <template>
-  <div>
-    <h1>{{ msg }}</h1>
+  <div class="page1">
+    <top-list></top-list>
+    <transition>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </transition>
   </div>
 </template>
 
 <script>
+import topList from 'components/common/toplist'
 export default {
-  data () {
-    return {
-      msg: 'this is page1'
-    }
+  components: {
+    topList
   }
 }
 </script>
