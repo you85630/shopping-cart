@@ -19,19 +19,18 @@ export default new Router({
     path: '/page1',
     name: 'Page1',
     component: Page1,
-    children: [
-      {
-        path: '/page1',
-        component: Hello
-      }, {
-        path: '/page1/list',
-        name: 'list',
-        component: List
-      }, {
-        path: '/page1/shopping',
-        name: 'shopping',
-        component: Shopping
-      }]
+    children: [{
+      path: '/page1',
+      component: Hello
+    }, {
+      path: '/page1/list',
+      name: 'list',
+      component: List
+    }, {
+      path: '/page1/shopping',
+      name: 'shopping',
+      component: Shopping
+    }]
   }, {
     path: '/page2',
     name: 'Page2',
