@@ -7,10 +7,10 @@ import state from './mudules/state'
 import getters from './mudules/getters'
 import mutations from './mudules/mutations'
 import actions from './mudules/actions'
-
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state,
   getters,
   mutations,
   actions
 })
+export default store
