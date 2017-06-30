@@ -9,13 +9,14 @@ export default {
       '老虎': 'http://osc94pt0z.bkt.clouddn.com/9.jpg'
     },
     size: {
-      '大号': '130',
-      '中号': '100',
-      '小号': '50'
+      '大号': '10',
+      '中号': '20',
+      '小号': '30'
     }
   },
   isActive: 0,
   isNow: 0,
   count: 1,
-  cart: []
+  cart: [],
+  total: 0
 }

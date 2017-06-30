@@ -30,9 +30,18 @@ export default {
       state.isActive = 0
       state.isNow = 0
       router.push({ path: 'shopping' })
+      // 总计
+      state.total = 0
+      state.cart.forEach(function (e) {
+        state.total += e.price
+      }, this)
     }
   },
   [types.REMOVE] (state, index) {
     state.cart.splice(index, 1)
+    state.total = 0
+    state.cart.forEach(function (e) {
+      state.total += e.price
+    }, this)
   }
 }
