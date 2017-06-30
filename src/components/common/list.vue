@@ -2,15 +2,10 @@
   <div class="list">
     <img :src="commodity.cover" alt="">
     <dl>
-      <dt>价格：</dt>
+      <dt>单价：</dt>
       <dd>￥
         <span v-text="commodity.price"></span>
       </dd>
-    </dl>
-    <dl>
-      <dt>重量：</dt>
-      <dd>
-        <span v-text="commodity.weight"></span>kg</dd>
     </dl>
     <dl>
       <dt>选择品种：</dt>
@@ -32,9 +27,17 @@
         </ul>
       </dd>
     </dl>
+    <dl class="counter">
+      <dt>数量：</dt>
+      <dd>
+        <button @click='del'>-</button>
+        <input type="text" :value="count">
+        <button @click='add'>+</button>
+      </dd>
+    </dl>
     <dl>
       <dd>
-        <button>购买</button>
+        <button @click='buy'>购买</button>
       </dd>
     </dl>
   </div>
@@ -46,7 +49,6 @@ export default {
     return {
       commodity: {
         price: '50-200',
-        weight: '200-300',
         cover: 'http://osc94pt0z.bkt.clouddn.com/1.jpg',
         species: {
           '豹子': 'http://osc94pt0z.bkt.clouddn.com/1.jpg',
@@ -61,15 +63,35 @@ export default {
         }
       },
       isActive: 0,
-      isNow: 0
+      isNow: 0,
+      count: 0,
+      cart: []
     }
   },
   methods: {
     activeSpecies (key) {
       this.isActive = key
+      this.commodity.cover = this.commodity.species[key]
     },
     activeSize (key) {
       this.isNow = key
+      this.commodity.price = this.commodity.size[key]
+    },
+    add () {
+      this.count++
+    },
+    del () {
+      this.count--
+    },
+    buy () {
+      this.cart.push({
+        name: this.isActive,
+        size: this.isNow,
+        num: this.count,
+        price: this.commodity.price
+      })
+      this.count = 0
+      console.log(this.cart)
     }
   }
 }
@@ -119,6 +141,21 @@ export default {
         &:hover {
           border-color: #ccc;
         }
+      }
+    }
+  }
+  .counter {
+    dd {
+      button {
+        width: 20px;
+        padding: 0;
+        line-height: 20px;
+        background-color: #ccc;
+      }
+      input {
+        text-align: center;
+        width: 20px;
+        line-height: 16px;
       }
     }
   }
