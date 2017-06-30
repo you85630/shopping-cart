@@ -44,55 +44,24 @@
 </template>
 
 <script>
+import { mapGetters, mapActions } from 'vuex'
 export default {
-  data () {
-    return {
-      commodity: {
-        price: '50-200',
-        cover: 'http://osc94pt0z.bkt.clouddn.com/1.jpg',
-        species: {
-          '豹子': 'http://osc94pt0z.bkt.clouddn.com/1.jpg',
-          '狗狗': 'http://osc94pt0z.bkt.clouddn.com/3.jpg',
-          '猫咪': 'http://osc94pt0z.bkt.clouddn.com/5.jpg',
-          '大熊猫': 'http://osc94pt0z.bkt.clouddn.com/7.jpg'
-        },
-        size: {
-          '大号': '200',
-          '中号': '100',
-          '小号': '50'
-        }
-      },
-      isActive: 0,
-      isNow: 0,
-      count: 0,
-      cart: []
-    }
+  computed: {
+    ...mapGetters([
+      'commodity',
+      'isActive',
+      'isNow',
+      'count'
+    ])
   },
   methods: {
-    activeSpecies (key) {
-      this.isActive = key
-      this.commodity.cover = this.commodity.species[key]
-    },
-    activeSize (key) {
-      this.isNow = key
-      this.commodity.price = this.commodity.size[key]
-    },
-    add () {
-      this.count++
-    },
-    del () {
-      this.count--
-    },
-    buy () {
-      this.cart.push({
-        name: this.isActive,
-        size: this.isNow,
-        num: this.count,
-        price: this.commodity.price
-      })
-      this.count = 0
-      console.log(this.cart)
-    }
+    ...mapActions([
+      'activeSpecies',
+      'activeSize',
+      'del',
+      'add',
+      'buy'
+    ])
   }
 }
 </script>

@@ -1,0 +1,6 @@
+export const ACTIVE_SPECIES = 'ACTIVE_SPECIES'
+export const ACTIVE_SIZE = 'ACTIVE_SIZE'
+export const ADD = 'ADD'
+export const DEL = 'DEL'
+export const BUY = 'BUY'
+export const REMOVE = 'REMOVE'
