@@ -18,3 +18,4 @@ npm run build
 npm run build --report
 ```
 
+##vuex关于购物车的demo
