@@ -8,7 +8,7 @@
 export default {
   data () {
     return {
-      msg: 'this is hello'
+      msg: 'this is The default page'
     }
   }
 }

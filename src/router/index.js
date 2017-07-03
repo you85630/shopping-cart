@@ -7,7 +7,7 @@ const Page1 = resolve => require(['components/pages/page1'], resolve)
 const Page2 = resolve => require(['components/pages/page2'], resolve)
 const Page3 = resolve => require(['components/pages/page3'], resolve)
 
-const List = resolve => require(['components/common/list'], resolve)
+const Commodity = resolve => require(['components/common/commodity'], resolve)
 const Shopping = resolve => require(['components/common/shopping'], resolve)
 
 export default new Router({
@@ -25,7 +25,7 @@ export default new Router({
     }, {
       path: '/page1/list',
       name: 'list',
-      component: List
+      component: Commodity
     }, {
       path: '/page1/shopping',
       name: 'shopping',
