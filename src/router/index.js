@@ -21,7 +21,7 @@ export default new Router({
     component: Page1,
     children: [{
       path: '/page1',
-      component: Hello
+      redirect: 'list'
     }, {
       path: '/page1/list',
       name: 'list',
