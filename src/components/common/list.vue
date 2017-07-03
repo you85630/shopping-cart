@@ -76,6 +76,7 @@ export default {
     left: 1%;
     top: 10px;
     width: 30%;
+    max-height: 180px;
   }
   dl {
     margin-left: 32%;
