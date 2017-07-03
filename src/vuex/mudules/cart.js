@@ -46,6 +46,9 @@ export default {
     },
     [types.DEL] (state) {
       state.count--
+      if (state.count <= 0) {
+        state.count = 0
+      }
     },
     [types.BUY] (state) {
       if (state.isActive !== 0 && state.isNow !== 0 && state.count !== 0) {
@@ -58,7 +61,7 @@ export default {
         })
         state.commodity.cover = 'http://osc94pt0z.bkt.clouddn.com/1.jpg'
         state.commodity.price = '50-200'
-        state.count = 1
+        state.count = 0
         state.isActive = 0
         state.isNow = 0
         router.push({
@@ -81,16 +84,28 @@ export default {
   },
   actions: {
     // 选中品种
-    activeSpecies: ({commit}, key) => commit('ACTIVE_SPECIES', key),
+    activeSpecies: ({
+      commit
+    }, key) => commit('ACTIVE_SPECIES', key),
     // 选中大小
-    activeSize: ({commit}, key) => commit('ACTIVE_SIZE', key),
+    activeSize: ({
+      commit
+    }, key) => commit('ACTIVE_SIZE', key),
     // 增加数量
-    add: ({commit}) => commit('ADD'),
+    add: ({
+      commit
+    }) => commit('ADD'),
     // 减少数量
-    del: ({commit}) => commit('DEL'),
+    del: ({
+      commit
+    }) => commit('DEL'),
     // 点击购买
-    buy: ({commit}) => commit('BUY'),
+    buy: ({
+      commit
+    }) => commit('BUY'),
     // 点击删除
-    remove: ({commit}, index) => commit('REMOVE', index)
+    remove: ({
+      commit
+    }, index) => commit('REMOVE', index)
   }
 }
