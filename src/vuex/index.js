@@ -3,14 +3,10 @@ import Vuex from 'vuex'
 
 Vue.use(Vuex)
 
-import state from './mudules/state'
-import * as getters from './mudules/getters'
-import mutations from './mudules/mutations'
-import actions from './mudules/actions'
+import cart from './mudules/cart'
 const store = new Vuex.Store({
-  state,
-  getters,
-  mutations,
-  actions
+  modules: {
+    cart
+  }
 })
 export default store
