@@ -1,15 +1,19 @@
 <template>
-  <div>
-    <h1>{{ msg }}</h1>
+  <div class="page2">
+    <table-list></table-list>
+    <transition>
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </transition>
   </div>
 </template>
 
 <script>
+import tableList from 'components/common/tablelist'
 export default {
-  data () {
-    return {
-      msg: 'this is page2'
-    }
+  components: {
+    tableList
   }
 }
 </script>
