@@ -1,4 +1,4 @@
-# demo6
+# demo about shopping cart
 
 > A Vue.js project
 
