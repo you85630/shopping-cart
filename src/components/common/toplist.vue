@@ -9,8 +9,8 @@ export default {
   data () {
     return {
       list: [
-        { index: 2, to: '/page1/list', name: '商品列表' },
-        { index: 3, to: '/page1/shopping', name: '购物车' }
+        { index: 2, to: '/list', name: '商品列表' },
+        { index: 3, to: '/shopping', name: '购物车' }
       ]
     }
   }
