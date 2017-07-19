@@ -7,7 +7,6 @@ const Commodity = resolve => require(['components/common/commodity'], resolve)
 const Shopping = resolve => require(['components/common/shopping'], resolve)
 
 export default new Router({
-  mode: 'history',
   routes: [{
     path: '/',
     component: Page1,
